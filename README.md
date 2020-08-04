@@ -1,2 +1,4 @@
 # Website
-Project to get my feet wet in web development
+Project to get my feet wet in web development.
+
+FIRST EDIT.
