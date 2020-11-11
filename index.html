@@ -2,56 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Zakareya Alatoli - Personal Webpage</title>
-    <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Homepage | Zakareya Alatoli</title>
+    <!-- Social media icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/social_media_icons.css" media="screen"/>
   </head>
   <body>
-    <div class="flex-container">
-      <div>
-        <div style="text-align:center; float:left; padding: 0px 20px 0px 20px;">
-          <img src="images/business_photo.png" style="border-radius: 50%; width: 150px; height: 150px;">
-        </div>
-        <h1 style="font-size: 40px; line-height: 60px;">Welcome to the professional webpage for Zakareya Alatoli (UNDER CONSTRUCTION)</h1>
-        <hr width="100%">
-        <iframe name = "Resume" src="https://docs.google.com/document/d/e/2PACX-1vSy6aPxkct0u2MFEa4VF0jwTyx_Qs61NHpc5ItkDMljpvl0kQYo25ts0pQAJGziPQ/pub?embedded=true" width="100%" height="400px">
-        </iframe>
-        <p>I am a programmer who specializes in fullstack web applications, but with skills in general software development. I have experience in the Unity
-          engine making video games as well as 3D modelling, texturing, rigging, and animation.
-        </p>
-        
-        <p>Links to other profiles:</p>
-        
-        <ul> 
-          <li><a href="https://www.linkedin.com/in/zalatoli/">Linkedin</a></li>
-          <li><a href="https://www.facebook.com/zakareya.alatoli/">Facebook</a></li>
-          <li class="test_class"><a href="https://twitter.com/zakareyaalatoli">Twitter</a></li>
-          <li><a href="https://github.com/ZakareyaAlatoli">GitHub</a></li>
-          <li><a href="https://www.youtube.com/channel/UCHbzKkmWbc_JJCFXjDhTJdQ">YouTube</a></li>
-        </ul>
-      </div>
+    <!--Picture and resume-->
+    <div style="float: left; width: 500px;">
+      <image src="images/business_photo.png" style="border-radius: 50%; margin: 10px auto 20px; display: block;"></image>
+      <iframe src="https://docs.google.com/document/d/e/2PACX-1vT7fk5gt5Fo-czbRXDIe0AtrxKtygr45t2i3nBCppMPcgQnSPiQUe6Bm9q3I-1XwIF_0T7RAtqdN5t2/pub?embedded=true" style="display: block; width: 500px; height: 500px;"></iframe>
+    </div>
+    <!--Biography-->
+    <div style="float: center; border:1px solid black; width: 600px; margin: auto">
+      <h1 style="text-align: center; margin: 0 auto 0 10px;">Zakareya Alatoli</h1>
+      <p style="text-align: center; margin: 0 auto 0 10px;">I am a software developer.</p>
+    </div>
 
-      <div style="width:800px">
-        <h2 style="text-align:center; line-height: 0;">MY PROJECTS</h2>
-        <hr width="100%">
-        <iframe src="https://itch.io/embed/733303" height="167" width="552" frameborder="0">
-          <a href="https://zakareyaalatoli.itch.io/basic-game">Basic Game by Zakareya Alatoli</a>
-        </iframe>
-        <iframe src="game/game.html" name="WIP Browser Game"    width="800" height="600" frameborder="0" scrolling="no">   <p>Your browser does not support iframes.</p> >
-        </iframe>
-
-        <!--REACT.JS TEST-->
-        <div id="like_button_container"></div>
-
-        <!-- Load React. -->
-        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-
-        <!-- Load our React component. -->
-        <script src="scripts/like_button.js"></script>
-        <!----------------->
-      </div>
+    <!--OUTBOUND LINKS (SOCIAL MEDIA, ETC.)-->
+    <div style="border:1px solid black; float: right; width: 70px;">
+      <a href="https://twitter.com/ZakareyaAlatoli" class="fa fa-twitter"></a>
+      <a href="https://www.facebook.com/zakareya.alatoli/" class="fa fa-facebook"></a>
     </div>
   </body>
 </html>
