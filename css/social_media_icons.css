@@ -30,8 +30,22 @@
     color: white;
   }
 
+<<<<<<< Updated upstream
   /* Github */
   .fa-github {
     background: #000000;
     color: white;
   }
+=======
+/* YouTube */
+.fa-youtube {
+    background: #FF0000;
+    color: white;
+}
+
+/* YouTube */
+.fa-linkedin {
+    background: #003366;
+    color: white;
+}
+>>>>>>> Stashed changes
