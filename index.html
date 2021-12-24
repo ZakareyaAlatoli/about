@@ -33,7 +33,7 @@
       <br>
       f(x) = 
       <input type="text" name="f(x)" value='Math.sin(x)' id='funcText'> 
-      You must write the function as Javascript code. Example: "Math.pow(2,x)"
+      TODO: Allow users to type functions
     </div>
     <div>
       <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -108,7 +108,7 @@
         }
         var funcText = document.getElementById('funcText');
         funcText.onchange = function() {
-          updateData(leftBound, rightBound, xRes, dx, this.value);
+          updateData(leftBound, rightBound, xRes, dx, 'Math.sin(x)');
           chart.data.labels = xData;
           chart.data.datasets[0].data = yData;
           chart.data.datasets[1].data = derivY;
