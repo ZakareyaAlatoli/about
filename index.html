@@ -32,8 +32,8 @@
       <input type="range" min="1" max="10" value="1" class="slider" id="dxRange">
       <br>
       f(x) = 
-      <input type="text" name="f(x)" value='sin(x)'> 
-      (This is a WIP, you cannot write your own function yet)
+      <input type="text" name="f(x)" value='Math.sin(x)' id='funcText'> 
+      You must write the function as Javascript code. Example: "Math.pow(2,x)"
     </div>
     <div>
       <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -42,27 +42,31 @@
         // Update the current slider value (each time you drag the slider handle)
 
         let func = (x) => Math.sin(x);
+        let funcStr = 'Math.sin(x)';
         let xData = [];
         let leftBound = -5;
         let rightBound = 5;
         let yData = [];
         let derivY = [];
         let dx = 0.01;
-        function updateData(left, right, interval, diff){
+        function updateData(left, right, interval, diff, fx){
           xData = [];
           yData = [];
           derivY = [];
+
           xRes = interval;
           leftBound = left;
           rightBound = right;
           dx = diff;
+          funcStr = fx;
+          eval(`func = (x) => ${funcStr}`);
           for (let i = leftBound; i <= rightBound; i += xRes){
             xData.push(i);
             yData.push(func(i));
             derivY.push((func(i + dx) - func(i)) / dx);
           }
         }
-        updateData(leftBound, rightBound, xRes, dx);
+        updateData(leftBound, rightBound, xRes, dx, funcStr);
         var chart = new Chart("myChart", {
           type: 'line',
           data: {
@@ -88,7 +92,7 @@
         });
         var slider = document.getElementById("myRange");
         slider.oninput = function() {
-          updateData(leftBound, rightBound, this.value / 10, dx);
+          updateData(leftBound, rightBound, this.value / 10, dx, funcStr);
           chart.data.labels = xData;
           chart.data.datasets[0].data = yData;
           chart.data.datasets[1].data = derivY;
@@ -96,7 +100,15 @@
         }
         var dxslider = document.getElementById("dxRange");
         dxslider.oninput = function() {
-          updateData(leftBound, rightBound, xRes, this.value / 100);
+          updateData(leftBound, rightBound, xRes, this.value / 100, funcStr);
+          chart.data.labels = xData;
+          chart.data.datasets[0].data = yData;
+          chart.data.datasets[1].data = derivY;
+          chart.update();
+        }
+        var funcText = document.getElementById('funcText');
+        funcText.onchange = function() {
+          updateData(leftBound, rightBound, xRes, dx, this.value);
           chart.data.labels = xData;
           chart.data.datasets[0].data = yData;
           chart.data.datasets[1].data = derivY;
