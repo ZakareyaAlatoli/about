@@ -2,119 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Homepage | Zakareya Alatoli</title>
     <!-- Social media icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/social_media_icons.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/social_media_icons.css" media="screen"/>
     <link rel="shortcut icon" type="image/x-icon" href="images/business_photo.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <title>Homepage | Zakareya Alatoli</title>
   </head>
   <body>
     <!--Picture and resume-->
     <div style="float: left; width: 500px;">
       <image src="images/business_photo.png" style="border-radius: 50%; margin: 10px auto 20px; display: block;"></image>
+      My Resume
       <iframe src="https://onedrive.live.com/embed?cid=69E84ADB6155F974&amp;resid=69E84ADB6155F974%21285&amp;authkey=AGQh8uQqQJ3o7pM&amp;em=2" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> document, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
     </div>
     <!--Biography-->
     <div style="float: center; border:1px solid black; width: 600px; margin: auto">
       <h1 style="text-align: center; margin: 0 auto 0 10px;">Zakareya Alatoli</h1>
       <p style="text-align: center; margin: 0 auto 0 10px;">I am a software developer.</p>
-    </div>
-    <!--Derivative Graph using Chart.js-->
-    <div class="slidecontainer">
-      X-Values Interval (0.1 - 1)
-      The x-axis is not continuous. A lower value makes the graphs smoother.
-      <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-      <br>
-      dx-Values (0.001 - 0.1)
-      This is the 'h' value in the definition of the derivative. lim h->0 (f(x + h) - f(x)) / h.
-      Lower values make the derivative more accurate.
-      <input type="range" min="1" max="10" value="1" class="slider" id="dxRange">
-      <br>
-      f(x) = 
-      <input type="text" name="f(x)" value='Math.sin(x)' id='funcText'> 
-      TODO: Allow users to type functions
-    </div>
-    <div>
-      <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-      <script>
-        var xRes = 0.5;
-        // Update the current slider value (each time you drag the slider handle)
-
-        let func = (x) => Math.sin(x);
-        let funcStr = 'Math.sin(x)';
-        let xData = [];
-        let leftBound = -5;
-        let rightBound = 5;
-        let yData = [];
-        let derivY = [];
-        let dx = 0.01;
-        function updateData(left, right, interval, diff, fx){
-          xData = [];
-          yData = [];
-          derivY = [];
-
-          xRes = interval;
-          leftBound = left;
-          rightBound = right;
-          dx = diff;
-          funcStr = fx;
-          eval(`func = (x) => ${funcStr}`);
-          for (let i = leftBound; i <= rightBound; i += xRes){
-            xData.push(i);
-            yData.push(func(i));
-            derivY.push((func(i + dx) - func(i)) / dx);
-          }
-        }
-        updateData(leftBound, rightBound, xRes, dx, funcStr);
-        var chart = new Chart("myChart", {
-          type: 'line',
-          data: {
-            labels: xData,
-            datasets: 
-            [
-              {
-                label: 'f(x)',
-                data: yData,
-                tension: 0,
-                fill: false,
-                borderColor: 'rgb(255, 0, 0)'
-              },
-              {
-                label: 'f \'(x) dx',
-                data: derivY,
-                tension: 0,
-                fill: false,
-                borderColor: 'rgb(0, 255, 0)'
-              }
-            ]
-          },
-        });
-        var slider = document.getElementById("myRange");
-        slider.oninput = function() {
-          updateData(leftBound, rightBound, this.value / 10, dx, funcStr);
-          chart.data.labels = xData;
-          chart.data.datasets[0].data = yData;
-          chart.data.datasets[1].data = derivY;
-          chart.update();
-        }
-        var dxslider = document.getElementById("dxRange");
-        dxslider.oninput = function() {
-          updateData(leftBound, rightBound, xRes, this.value / 100, funcStr);
-          chart.data.labels = xData;
-          chart.data.datasets[0].data = yData;
-          chart.data.datasets[1].data = derivY;
-          chart.update();
-        }
-        var funcText = document.getElementById('funcText');
-        funcText.onchange = function() {
-          updateData(leftBound, rightBound, xRes, dx, 'Math.sin(x)');
-          chart.data.labels = xData;
-          chart.data.datasets[0].data = yData;
-          chart.data.datasets[1].data = derivY;
-          chart.update();
-        }
-      </script>
     </div>
 
     <!--OUTBOUND LINKS (SOCIAL MEDIA, ETC.)-->
