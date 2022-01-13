@@ -7,18 +7,30 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/social_media_icons.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="images/business_photo.ico">
+    <script defer type="text/javascript" src="scripts/jumbotron.js"></script>
 
     <title>Zakareya Alatoli | Homepage</title>
   </head>
   <body>
     <!--Picture and resume-->
-    <div style="float: left; width: 500px;">
-      <image src="images/business_photo.png" style="border-radius: 50%; margin: 10px auto 20px; display: block;"></image>
+    <div>
+      <image src="images/business_photo.png" id="profile-image"></image>
     </div>
     <!--Biography-->
-    <div style="float: center; border:1px solid black; width: 600px; margin: auto">
-      <h1 style="text-align: center; margin: 0 auto 0 10px;">Zakareya Alatoli</h1>
-      <p style="text-align: center; margin: 0 auto 0 10px;">I am a software developer.</p>
+    <div id="biography">
+      <h1>Zakareya Alatoli</h1>
+      <p>I am a software developer.</p>
+    </div>
+    <!--Center Window-->
+    <div style=
+      "display: flex;
+      background: #999999;
+  	  justify-content: center;
+  	  align-items: center;
+      margin: auto;
+      width: 900px;
+      height: 900px;">
+      <button type="button" id="jumbotron" onclick="resizeJumbotron()"></button>
     </div>
 
     <!--OUTBOUND LINKS (SOCIAL MEDIA, ETC.)-->
