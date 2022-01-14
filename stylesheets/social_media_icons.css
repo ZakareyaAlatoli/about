@@ -1,4 +1,18 @@
 /* Style all font awesome icons */
+.icon-box {
+  width: 0; 
+  position: fixed; 
+  right:10%; 
+  top: 5%;
+}
+
+.contacts-box {
+  width: 200px; 
+  position: fixed; 
+  left:5%; 
+  top: 5%;
+}
+
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -25,13 +39,11 @@
   background: #3B5998;
   color: white;
 }
-
 /* Twitter */
 .fa-twitter {
   background: #55ACEE;
   color: white;
 }
-
 /* Github */
 .fa-github {
   background: #000000;
@@ -42,8 +54,7 @@
     background: #FF0000;
     color: white;
 }
-
-/* YouTube */
+/* Linkedin */
 .fa-linkedin {
     background: #003366;
     color: white;

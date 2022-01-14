@@ -1,18 +1,7 @@
 body {
-    background: gray;
+    background: linear-gradient(to right, #000022 0%, #8888aa 50%, #000022 100%);
     text-align: center;
-}
-
-#jumbotron {
-    width: 50%;
-    height: 50%;
-
-    background-color: black;
-    border-radius: 50%;
-
-    transition: 0.5s;
-    transition-property: width, height, background-color, border-radius;
-    border-color: black;
+    font-family: system-ui;
 }
 
 #profile-image {
