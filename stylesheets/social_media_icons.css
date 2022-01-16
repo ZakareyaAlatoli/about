@@ -2,15 +2,15 @@
 .icon-box {
   width: 0; 
   position: fixed; 
-  right:10%; 
-  top: 5%;
+  right:13.5%; 
+  top: 10%;
 }
 
 .contacts-box {
   width: 200px; 
   position: fixed; 
-  left:5%; 
-  top: 5%;
+  left:3%; 
+  top: 10%;
 }
 
 .fa {

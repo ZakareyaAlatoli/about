@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="stylesheets/dropdown.css"/>
     <link rel="stylesheet" href="stylesheets/social_media_icons.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="images/business_photo.ico">
-    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script defer src="scripts/dropdown.js"></script>
 
     <title>Zakareya Alatoli | Homepage</title>
   </head>
   <body>
-    <a href="content/link.html">Link</a>
     <!--Picture-->
     <div>
       <image src="images/business_photo.png" id="profile-image"></image>
     </div>
     <!--Resume-->
+    <h1>My Resume</h1>
     <div>
       <iframe src="https://onedrive.live.com/embed?resid=69E84ADB6155F974%21285&amp;authkey=%21AGQh8uQqQJ3o7pM&amp;em=2" width="700px" height="1000px" frameborder="0">
         This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> document, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
@@ -27,34 +27,37 @@
     <!--Projects-->
     <div>
       <h1>Projects</h1>
-      <h2>Click one to see more.</h2>
       <!--Website-->
-      <div>
-        <button class="dropdown-tab" onclick="handleDrop('website-drop', 'website-text')">My Website</button>
-        <div class="dropdown-body" id="website-drop">
-          <p class="dropdown-text" id="website-text">
-            This website was built from scratch by me. I wrote
-            all the HTML, CSS, and Javascript. You can find the 
-            source code <a href="https://github.com/ZakareyaAlatoli/about">here.</a>
-          </p>
-        </div>
-      </div>
+      <button class="dropdown">
+        My Website
+        <p class="dropdown-body">
+          This website was built from scratch by me. I wrote
+          all the HTML, CSS, and Javascript. You can find the 
+          source code <a href="https://github.com/ZakareyaAlatoli/about">here.</a>
+        </p>
+      </button>
       <!--Fullstack Project-->
       <br>
-      <div>
-        <button class="dropdown-tab" onclick="handleDrop('fullstack-drop', 'fullstack-text')">Fullstack Practice</button>
-        <div class="dropdown-body" id="fullstack-drop">
-          <p class="dropdown-text" id="fullstack-text">
-            This is a recreation of "Mybrary", a library catalog
-            app made by YouTuber "Web Dev Simplified". From this 
-            I learned the workflow of developing an app in Node.js,
-            using a templating engine (EJS), setting up a server with
-            Express, and deploying an app to the cloud (via Heroku).
-            The source code can be found <a href="https://github.com/ZakareyaAlatoli/Fullstack-Project">here.</a>
-            Link to <a href="https://mybrary-tutorial.herokuapp.com/" target="_blank">"Mybrary".</a>
-          </p>
-        </div>
-      </div>
+      <button class="dropdown">
+        Fullstack Practice
+        <p class="dropdown-body">
+          This is a recreation of "Mybrary", a library catalog
+          app made by YouTuber "Web Dev Simplified". From this 
+          I learned the workflow of developing an app in Node.js,
+          using a templating engine (EJS), setting up a server with
+          Express, and deploying an app to the cloud (via Heroku).
+          The source code can be found <a href="https://github.com/ZakareyaAlatoli/Fullstack-Project">here.</a>
+          Link to <a href="https://mybrary-tutorial.herokuapp.com/" target="_blank">"Mybrary".</a>
+        </p>
+      </button>
+      <!--Some Game-->
+      <br>
+      <button class="dropdown">
+        Itch I.O Game
+        <p class="dropdown-body">
+          A text-based browser game. Still in planning phase.
+        </p>
+      </button>
 
     <!--OUTBOUND LINKS (SOCIAL MEDIA, ETC.)-->
     <div class="icon-box">
@@ -65,6 +68,7 @@
       <a href="https://www.linkedin.com/in/zalatoli/" target="_blank" class="fa fa-linkedin"></a>
     </div>
     <div class="contacts-box">
+      <h2>Email Me!</h2>
       <a href="mailto:zakareya.m.alatoli@gmail.com">
         <img src="images/mail.png" alt="email me" width="100px" height="100px" title="Email Me!">
       </a>
