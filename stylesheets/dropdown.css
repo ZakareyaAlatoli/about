@@ -1,0 +1,35 @@
+:root {
+    --drop-speed: .4s;
+}
+
+.dropdown-tab {
+    margin: 0 auto;
+    width: 500px;
+    height: 4em;
+    background: #dddddd;
+    font-size: larger;
+    border-color: #000044;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.dropdown-body {
+    margin: 0 auto;
+    width: 500px;
+    height: 0px;
+    background: white;
+    border-color: #000044;
+    border-width: 5px;
+    border-style: solid;
+    transition: var(--drop-speed) height;
+}
+
+.dropdown-text {
+    display: none;
+    position: relative;
+    font-size: large;
+    margin: 0 5%;
+    overflow: hidden;
+    opacity: 0;
+    transition: .2s opacity;
+}

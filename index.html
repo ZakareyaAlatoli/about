@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <!-- Social media icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/social_media_icons.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
+    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <link rel="stylesheet" href="stylesheets/dropdown.css"/>
+    <link rel="stylesheet" href="stylesheets/social_media_icons.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="images/business_photo.ico">
-    <script defer type="text/javascript" src="scripts/jumbotron.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
 
     <title>Zakareya Alatoli | Homepage</title>
   </head>
@@ -26,29 +27,34 @@
     <!--Projects-->
     <div>
       <h1>Projects</h1>
-      <div class="project">
-        <h2>Personal Website</h2>
-        <span id="link">
-          <a href="https://zakareyaalatoli.github.io/about/" target="_blank">Site</a>
-        </span>
-        <span id="source">
-          <a href="https://github.com/ZakareyaAlatoli/about">Source Code</a>
-        </span>
-        <p>My personal webpage. Fully authored by me.</p>
+      <h2>Click one to see more.</h2>
+      <!--Website-->
+      <div>
+        <button class="dropdown-tab" onclick="handleDrop('website-drop', 'website-text')">My Website</button>
+        <div class="dropdown-body" id="website-drop">
+          <p class="dropdown-text" id="website-text">
+            This website was built from scratch by me. I wrote
+            all the HTML, CSS, and Javascript. You can find the 
+            source code <a href="https://github.com/ZakareyaAlatoli/about">here.</a>
+          </p>
+        </div>
       </div>
-      <div class="project">
-        <h2>Fullstack Practice</h2>
-        <span id="link">
-          <a href="https://mybrary-tutorial.herokuapp.com/" target="_blank">Site</a>
-        </span>
-        <span id="source">
-          <a href="https://github.com/ZakareyaAlatoli/Fullstack-Project">Source Code</a>
-        </span>
-        <p>A library catalog authored by 
-          <a href="https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw">Web Dev Simplified</a>
-        </p>
+      <!--Fullstack Project-->
+      <br>
+      <div>
+        <button class="dropdown-tab" onclick="handleDrop('fullstack-drop', 'fullstack-text')">Fullstack Practice</button>
+        <div class="dropdown-body" id="fullstack-drop">
+          <p class="dropdown-text" id="fullstack-text">
+            This is a recreation of "Mybrary", a library catalog
+            app made by YouTuber "Web Dev Simplified". From this 
+            I learned the workflow of developing an app in Node.js,
+            using a templating engine (EJS), setting up a server with
+            Express, and deploying an app to the cloud (via Heroku).
+            The source code can be found <a href="https://github.com/ZakareyaAlatoli/Fullstack-Project">here.</a>
+            Link to <a href="https://mybrary-tutorial.herokuapp.com/" target="_blank">"Mybrary".</a>
+          </p>
+        </div>
       </div>
-    </div>
 
     <!--OUTBOUND LINKS (SOCIAL MEDIA, ETC.)-->
     <div class="icon-box">
