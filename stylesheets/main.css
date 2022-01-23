@@ -18,15 +18,9 @@ body {
     background: #666677;
 }
 
-.project a {
-    text-decoration: none;
-    font-family: Arial;
-}
 
-.project #link {
-    margin-right: 20%;
-}
-
-.project #source {
-    margin-left: 20%;
+#twitter-feed {
+    position: absolute;
+    width: 250px;
+    height: auto;
 }

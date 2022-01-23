@@ -6,13 +6,6 @@
   top: 10%;
 }
 
-.contacts-box {
-  width: 200px; 
-  position: fixed; 
-  left:3%; 
-  top: 10%;
-}
-
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -20,6 +13,8 @@
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
+  border-width: 5px;
+  border-style: solid;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 50% -10px;
@@ -33,6 +28,12 @@
 }
 
 /* Set a specific color for each brand */
+
+/* Email */
+.fa-envelope {
+  background: red;
+  color: white;
+}
 
 /* Facebook */
 .fa-facebook {
