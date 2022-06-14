@@ -21,7 +21,7 @@
     font-size: larger;
     font-weight: 500;
     user-select: text;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 .dropdown-body {
