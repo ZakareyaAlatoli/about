@@ -1,26 +1,45 @@
 body {
-    background: linear-gradient(to right, #002222 0%, #88aaaa 50%, #002222 100%);
+    background: linear-gradient(to right, #002222 0%, #EEFFDD 15%, #EEFFDD 85%, #002222 100%);
     text-align: center;
-    font-family: system-ui;
+    display: flex;
+    justify-content: center;
 }
 
-#profile-image {
-    border-radius: 50%; 
-    border-width: 10px;
-    border-style: solid;
-}
-
-.project {
-    position: relative;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 10px;
-    background: #666677;
-}
-
-
-#twitter-feed {
+.post::before {
+    content: "";
     position: absolute;
-    width: 250px;
-    height: auto;
+    height: 2em;
+    width: 22em;
+    background-color: #EEEE00;
+    margin: -2em 0 0 -1em;
+}
+
+.post {
+    margin-top: 1em;
+    font-family: cursive;
+    border: 1em solid yellow;
+    border-top-width: 2em;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 20em;
+    background-color: yellow;
+}
+
+.post-container {
+    margin: -0.5em 0;
+    padding: 1em;
+    background: url("../images/post_wall.jpg") repeat-y;
+    width: 75vw;
+    border: 1em solid gray;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.link-container {
+    margin: -0.5em 0;
+    padding: 1em;
+    background: white;
+    width: 25vw;
+    border: 1em solid black;
 }

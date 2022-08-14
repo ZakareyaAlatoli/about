@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(to right, #002222 0%, #88aaaa 50%, #002222 100%);
+    text-align: center;
+    font-family: system-ui;
+}
+
+#profile-image {
+    border-radius: 50%; 
+    border-width: 10px;
+    border-style: solid;
+}
+
+.project {
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10px;
+    background: #666677;
+}
+
+
+#twitter-feed {
+    position: absolute;
+    width: 250px;
+    height: auto;
+}
