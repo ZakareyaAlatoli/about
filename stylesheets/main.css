@@ -1,42 +1,9 @@
 body{
-    margin: 0;
+    margin: 50px 100px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-.post::before {
-    content: "";
-    position: absolute;
-    height: 2em;
-    width: 17em;
-    background-color: #EEEE00;
-    margin: -2em 0 0 -1em;
-}
-
-.post {
-    position: relative;
-    font-family: cursive;
-    border: 1em solid yellow;
-    text-align: left;
-    width: 15em;
-    height: 15em;
-    background-color: yellow;
-}
-
-.post-container {
-    padding: 1em;
-    background: url("../images/post_wall.jpg") repeat;
-    width: 75vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 18em);
-    grid-template-rows: repeat(auto-fit, 19em);
-    overflow: auto;
-}
-
-.link-container {
-    padding: 1em;
-    background: white;
-    width: 25vw;
-    border-left: 1em solid black;
-    border-right: 1em solid black;
-    border-bottom: 1em solid black;
+a{
+    text-decoration: none;
 }

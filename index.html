@@ -3,48 +3,38 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/main.css">
-    <title>Zak's Scratchboard</title>
+    <title>Zakareya Alatoli - Homepage (WIP)</title>
   </head>
   <body>
     <!--Header-->
-    <header style="position: sticky; background: linear-gradient(0, black 0%, aqua 40%, aqua 60%, black 100%); width: 100vw;">
-      <span style="position: absolute; bottom: 25%; left: 1%; font-size: larger;">Zak's Scratchboard</span>
-      <span style="position:relative; left: 90%;">
-        <a href="mailto:zakareyamalatoli@gmail.com">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" width="50px" height="100%">
-        </a>
-        <a href="https://github.com/ZakareyaAlatoli">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50px" height="100%">
-        </a>
-      </span>
-    </header>
-    <div style="width: 100vw; height:100vw; display:flex;">
-      <nav class="link-container">
-        <h1>Articles</h1>
-        <a href="information_encoding.html">How Computers Store Information</a>
-        <h1>Projects</h1>
-        <a href="https://github.com/ZakareyaAlatoli/Got-Your-Card">Got Your Card (Multiplayer Browser Game)</a>
-      </nav>
-      <div class="post-container">
-        <p class="post">
-          Saturday - September 17, 2022<br>
-          HTML is very confusing. Nothing is laid out intuitively. But 
-          I will get it eventually.
-        </p>
-        <p class="post">
-          Friday - September 16, 2022<br>
-          I am studying the HTML of other websites to see how they look so good.
-        </p>
-        <p class="post">
-          Sunday - August 14, 2022<br>
-          Everything is under construction right now. This is not the final look.
-        </p>
-        <p class="post">
-          Saturday - August 13, 2022<br>
-          I will use this website to show off projects but also interesting things that I learn.
-          Or just stuff I want to talk about. 
-        </p>
-      </div>
-    </div>
+    <h1>
+      Happy <span id="weekday">Today</span>!
+      <script>
+        const day = new Date().getDay(); //return 0 to 6
+        let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        document.getElementById('weekday').textContent = weekday[day];
+      </script>
+    </h1>
+    <p style="text-align: center;">
+      My name is Zakareya Alatoli: programmer by day, error-prone programmer by night. I like to write code 
+      for business and pleasure. Web development is my specialty, fullstack to be exact. I hope to 
+      work professionally as a software developer one day. Computers have infinite potential <a target="_blank"
+      href="https://en.wikipedia.org/wiki/Turing_completeness">(Alan Turing even proved it!)</a> and I consider 
+      it my duty to leverage that potential for the good of mankind...or at least my own amusement.
+    </p>
+    <h1>
+      Links:
+    </h1>
+    <ul>
+      <li>
+        <a href="https://github.com/ZakareyaAlatoli">Github</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/zalatoli/">LinkedIn</a>
+      </li>
+      <li>
+        <a href="mailto://zakareya.m.alatoli@gmail.com">📧 Email Me!</a>
+      </li>
+    </ul>
   </body>
 </html>
