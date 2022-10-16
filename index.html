@@ -7,21 +7,23 @@
   </head>
   <body>
     <!--Header-->
-    <h1>
-      Happy <span id="weekday">Today</span>!
-      <script>
-        const day = new Date().getDay(); //return 0 to 6
-        let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        document.getElementById('weekday').textContent = weekday[day];
-      </script>
-    </h1>
-    <p style="text-align: center;">
-      My name is Zakareya Alatoli: programmer by day, error-prone programmer by night. I like to write code 
+    <header>
+      <h1>
+        Happy <span id="weekday">Today</span>!
+        <script>
+          const day = new Date().getDay(); //return 0 to 6
+          let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          document.getElementById('weekday').textContent = weekday[day];
+        </script>
+      </h1>
+    </header>
+    <article>
+      My name is <em>Zakareya Alatoli</em>: programmer by day, error-prone programmer by night. I like to write code 
       for business and pleasure. Web development is my specialty, fullstack to be exact. I hope to 
       work professionally as a software developer one day. Computers have infinite potential <a target="_blank"
       href="https://en.wikipedia.org/wiki/Turing_completeness">(Alan Turing even proved it!)</a> and I consider 
       it my duty to leverage that potential for the good of mankind...or at least my own amusement.
-    </p>
+    </article>
     <h1>
       Links:
     </h1>
@@ -36,5 +38,39 @@
         <a href="mailto://zakareya.m.alatoli@gmail.com">📧 Email Me!</a>
       </li>
     </ul>
+    <h1>
+      Projects
+    </h1>
+    <ul>
+      <li>
+        <a href="https://github.com/ZakareyaAlatoli/Got-Your-Card">Got Your Card</a>
+        <p>
+          A text-based game where each player answers each other's random questions, and 
+          you win by correctly identifying who said what.
+        </p>
+      </li>
+    </ul>
+    <div class="center-background">
+      <h1 id="time">CURRENT TIME</h1>
+      <script>
+        function getTime(){
+          today = new Date();
+          seconds = today.getSeconds();
+          minutes = today.getMinutes();
+          hours = today.getHours();
+          hours = hours > 12 ? hours - 12 : hours;
+
+          seconds = seconds < 10 ? '0' + seconds : seconds;
+          minutes = minutes < 10 ? '0' + minutes : minutes;
+          return hours + ':' + minutes + ':' + seconds;
+        }
+        display = document.getElementById('time');
+        display.textContent = getTime();  
+        window.setInterval(() => {
+          today = new Date();
+          display.textContent = getTime();
+        }, 1000)
+      </script>
+    </div>
   </body>
 </html>
