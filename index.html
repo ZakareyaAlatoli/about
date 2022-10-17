@@ -8,17 +8,41 @@
   <body>
     <!--Header-->
     <header>
-      <h1>
-        Happy <span id="weekday">Today</span>!
-        <script>
-          const day = new Date().getDay(); //return 0 to 6
-          let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-          document.getElementById('weekday').textContent = weekday[day];
-        </script>
-      </h1>
+      <span id="scantext" style="text-align: left;"></span><span id="insertion">|</span>
+      <script>
+        textbox = document.getElementById('scantext');
+        day = new Date().getDay(); //return 0 to 6
+        const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        daystring = weekday[day];
+        fulltext = 'Happy ' + daystring + '!';
+        i = 0;
+        scan = setInterval(() => {
+          if(Math.random() <= 0.5) return;//stagger text
+          currentText = textbox.textContent;
+          if(i < fulltext.length){
+            currentText += fulltext[i];
+            textbox.textContent = currentText;
+            i++;
+          }
+          else {
+            clearInterval(scan);
+          }
+        }, 100);
+        insertion = document.getElementById('insertion');
+        on = false;
+        setInterval(() => {
+          on = !on;
+          if(on){
+            insertion.style.color = 'rgba(0,0,0,0)';
+          }
+          else{
+            insertion.style.color = 'rgba(0,0,0,1)';
+          }
+        }, 500);
+      </script>
     </header>
     <article>
-      <h2>I am <b style="color: #006600;">Zakareya Alatoli</b>, programmer by day, error-prone programmer by night.</h2> 
+      <h2>I am <b style="color: #006600;">Zakareya Alatoli</b>, programmer by day, drowsier programmer by night.</h2> 
       I like to write code 
       for business and pleasure. Web development is my specialty, fullstack to be exact. I hope to 
       work professionally as a software developer one day. Computers have infinite potential <a target="_blank"
