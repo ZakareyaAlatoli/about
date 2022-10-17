@@ -51,24 +51,35 @@
       </li>
     </ul>
     <div class="center-background">
-      <h1 id="time">CURRENT TIME</h1>
+      <h1><span id="hours">HR</span>:<span id="minutes">MN</span>:<span id="seconds">SC</span></h1>
       <script>
-        function getTime(){
-          today = new Date();
-          seconds = today.getSeconds();
-          minutes = today.getMinutes();
-          hours = today.getHours();
-          hours = hours > 12 ? hours - 12 : hours;
-
-          seconds = seconds < 10 ? '0' + seconds : seconds;
-          minutes = minutes < 10 ? '0' + minutes : minutes;
-          return hours + ':' + minutes + ':' + seconds;
+        function getHours(date){
+          hours = date.getHours();
+          return hours > 12 ? hours - 12 : hours;
         }
-        display = document.getElementById('time');
-        display.textContent = getTime();  
+        function getMinutes(date){
+          minutes = date.getMinutes();
+          return minutes < 10 ? '0' + minutes : minutes;
+        }
+        function getSeconds(date){
+          seconds = date.getSeconds();
+          return seconds < 10 ? '0' + seconds : seconds;
+        }
+        
+        dispHR = document.getElementById('hours');
+        dispMN = document.getElementById('minutes');
+        dispSC = document.getElementById('seconds');
+
+        today = new Date();
+        dispHR.textContent = getHours(today);
+        dispMN.textContent = getMinutes(today);
+        dispSC.textContent = getSeconds(today);
+ 
         window.setInterval(() => {
           today = new Date();
-          display.textContent = getTime();
+          dispHR.textContent = getHours(today);
+          dispMN.textContent = getMinutes(today);
+          dispSC.textContent = getSeconds(today);
         }, 1000)
       </script>
     </div>
