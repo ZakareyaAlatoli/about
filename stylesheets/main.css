@@ -1,7 +1,15 @@
 :root{
-    --bg-h: 100;
-    --bg-s: 30%;
-    --bg-l: 60%;
+    --bg-h: 60;
+    --bg-s: 25%;
+    --bg-l: 70%;
+}
+
+.bg-color-dark{
+    color: hsl(var(--bg-h), var(--bg-s), calc(var(--bg-l) - 10%));
+}
+
+.bg-color-darker{
+    color: hsl(var(--bg-h), var(--bg-s), calc(var(--bg-l) - 35%));
 }
 
 body{
@@ -29,7 +37,6 @@ ul{
     z-index: -1;
     font-size: 8rem;
     letter-spacing: -1.25rem;
-    color: hsl(var(--bg-h), var(--bg-s), calc(var(--bg-l) - 10%));
 }
 
 #hours, #minutes, #seconds {

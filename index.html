@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/main.css">
+    <script>
+      const root = document.querySelector(':root');
+      root.style.setProperty('--bg-h', Math.random() * 360);
+      //change background hue randomly on page load
+    </script>
     <title>Zakareya Alatoli - Homepage</title>
   </head>
   <body>
     <!--Header-->
     <header>
-      <span id="scantext" style="text-align: left;"></span><span id="insertion">|</span>
+      <span id="scantext" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"></span><span id="insertion">|</span>
       <script>
         textbox = document.getElementById('scantext');
         day = new Date().getDay(); //return 0 to 6
@@ -42,7 +47,7 @@
       </script>
     </header>
     <article>
-      <h2>I am <b style="color: #006600;">Zakareya Alatoli</b>, programmer by day, drowsier programmer by night.</h2> 
+      <h2>I am <b class="bg-color-darker">Zakareya Alatoli</b>, programmer by day, drowsier programmer by night.</h2> 
       I like to write code 
       for business and pleasure. Web development is my specialty, fullstack to be exact. I hope to 
       work professionally as a software developer one day. Computers have infinite potential <a target="_blank"
@@ -83,7 +88,7 @@
         <a href="information_encoding.html">Information Encoding</a>
       </li>
     </ul>
-    <div class="center-background">
+    <div class="center-background bg-color-dark">
       <h1><span id="hours">HR</span>:<span id="minutes">MN</span>:<span id="seconds">SC</span></h1>
       <script>
         function getHours(date){
