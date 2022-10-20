@@ -36,7 +36,7 @@ li{
     border-width: 10px;
     padding: 5px;
     margin-bottom: 10px;
-    background-color: hsla(calc(360 - var(--bg-h)), 100%, 50%, 0.2);
+    background-color: hsla(calc(var(--bg-h) - 180), 100%, 50%, 0.2);
 }
 
 li img, nav img{
