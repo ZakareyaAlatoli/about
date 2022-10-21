@@ -16,8 +16,8 @@ body{
     margin: 20px 100px;
     font-family: Arial, Helvetica, sans-serif, 'Arial Bold';
     font-weight: 600;
-    text-align: center;
-    background-color: hsl(var(--bg-h), var(--bg-s), var(--bg-l));
+    /*text-align: center;*/
+    background: linear-gradient(90deg, white 0%, hsl(var(--bg-h), var(--bg-s), var(--bg-l)) 100%);
 }
 
 a{
@@ -25,18 +25,24 @@ a{
 }
 
 ul{
-    margin: 0 100px;
+    margin-right: 10px;
     list-style-type: none;
     padding: 0;
 }
 
 li{
+    --op: 0.5;
     border-radius: 25px;
     border-style: outset;
     border-width: 10px;
     padding: 5px;
-    margin-bottom: 10px;
-    background-color: hsla(calc(var(--bg-h) - 180), 100%, 50%, 0.2);
+    margin-top: 10px;
+    transition: background-color 0.1s;
+    background-color: hsla(calc(var(--bg-h) - 180), 100%, 85%, var(--op));
+}
+
+li:hover{
+    --op: 0.8;
 }
 
 li img, nav img{
