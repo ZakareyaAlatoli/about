@@ -12,6 +12,10 @@
     -webkit-text-fill-color: transparent; 
 }
 
+.bg-color{
+    color: hsl(var(--bg-h), var(--bg-s), var(--bg-l));
+}
+
 .bg-color-dark{
     color: hsl(var(--bg-h), var(--bg-s), calc(var(--bg-l) - 10%));
 }
@@ -38,13 +42,13 @@ ul{
 }
 
 li{
-    --op: 0.2;
+    --op: 0.25;
     border-radius: 25px;
     border-style: outset;
     border-width: 10px;
     padding: 5px;
     margin-top: 10px;
-    transition: background-color 0.1s;
+    transition: background-color 0.3s;
     background-color: hsla(calc(var(--bg-h) - 180), 100%, 85%, var(--op));
     text-align: center;
 }
