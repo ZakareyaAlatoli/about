@@ -5,8 +5,13 @@
     <link rel="stylesheet" href="stylesheets/main.css">
     <script>
       const root = document.querySelector(':root');
-      root.style.setProperty('--bg-h', Math.random() * 360);
-      //change background hue randomly on page load
+      const initialHue = Math.random() * 360;
+      root.style.setProperty('--bg-h', initialHue);
+      onscroll = (e) => {
+        //This becomes more expensive with smooth scrolling. Might need to
+        //stagger it
+        root.style.setProperty('--bg-h', initialHue + (window.scrollY / 4));
+      }
     </script>
     <title>Zakareya Alatoli - Homepage</title>
   </head>
