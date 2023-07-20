@@ -15,92 +15,116 @@
     <title>Zakareya Alatoli - Homepage</title>
   </head>
   <body>
-    <nav>
-      <a href="https://github.com/ZakareyaAlatoli" style="align-content: left;">
-        <img src="https://img.icons8.com/ios-filled/344/github.png">
-      </a>
-      <a href="https://www.linkedin.com/in/zalatoli/">
-        <img src="https://img.icons8.com/ios-filled/344/linkedin-circled--v1.png">
-      </a>
-      <a href="mailto://zakareya.m.alatoli@gmail.com">
-        <img src="https://img.icons8.com/ios-filled/344/circled-envelope.png">
-      </a>
-    </nav>
-    <nav style="align-content: right;">
-      <a href="./precision_loss.html">Precision Loss</a>
-    </nav>
-    <!--Header-->
-    <header>
-      <span id="scantext"></span><span id="insertion">|</span>
-      <script>
-        textbox = document.getElementById('scantext');
-        day = new Date().getDay(); //return 0 to 6
-        const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        daystring = weekday[day];
-        fulltext = 'Happy ' + daystring + '!';
-        i = 0;
-        scan = setInterval(() => {
-          if(Math.random() <= 0.5) return;//stagger text
-          currentText = textbox.textContent;
-          if(i < fulltext.length){
-            currentText += fulltext[i];
-            textbox.textContent = currentText;
-            i++;
-          }
-          else {
-            clearInterval(scan);
-          }
-        }, 100);
-        insertion = document.getElementById('insertion');
-        on = false;
-        setInterval(() => {
-          on = !on;
-          if(on){
-            insertion.style.color = 'rgba(0,0,0,0)';
-          }
-          else{
-            insertion.style.color = 'rgba(0,0,0,1)';
-          }
-        }, 500);
-      </script>
-    </header>
-    <article>
-      <h2 class="gradient-text-shadow" style="font-size: 3rem;">I am <i>Zakareya Alatoli</i>, a fullstack developer.</h2> 
-      <h3 class="gradient-text-shadow" style="font-size: 2rem;">
-        I write code for business and pleasure. Take a look at what I've done.
-      </h3>
-    </article>
-    <div>
-      <section>
-        <ul>
-          <!--Multiplayer Browser Game-->
-          <a href="https://github.com/ZakareyaAlatoli/Got-Your-Card">
-            <li>
-              <span>Got Your Card</span>
-              <p>
-                A text-based game where each player answers each other's random questions, and 
-                you win by correctly identifying who said what.
-              </p>
-              <img src="https://img.icons8.com/fluency/344/node-js.png" title="Node.js"/>
-              <img src="https://img.icons8.com/ios/344/javascript-logo.png" title="Javascript"/>
-              <img src="https://img.icons8.com/ios/344/html-filetype--v1.png" title="HTML"/>
-              <img src="https://img.icons8.com/dotty/344/css.png" title="CSS"/>
-            </li>
-          </a>
-          <!--My Website-->
-          <a href="https://github.com/ZakareyaAlatoli/about">
-            <li>
-              <span>My Personal Website</span>
-              <p>
-                Code for the very website you are looking at.
-              </p>
-              <img src="https://img.icons8.com/ios/344/javascript-logo.png" title="Javascript"/>
-              <img src="https://img.icons8.com/ios/344/html-filetype--v1.png" title="HTML"/>
-              <img src="https://img.icons8.com/dotty/344/css.png" title="CSS"/>
-            </li>
-          </a>
-        </ul>
-      </section>
-    </div>
+    <table>
+      <tr>
+        <td style="width: 80vw;">
+          <span id="scantext"></span><span id="insertion">|</span>
+          <script>
+            textbox = document.getElementById('scantext');
+            let fulltext;
+            if(Math.random() <= 0.5){
+              const messages = [
+                "Welcome to my homepage!",
+                "Hello there!",
+                "Make yourself comfortable."
+              ];
+              fulltext = messages[Math.floor(Math.random() * (messages.length - 1))]
+              console.log(fulltext);
+            }
+            else {
+              day = new Date().getDay(); //return 0 to 6
+              const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+              daystring = weekday[day];
+              //Set this string to what you want to be typed out on page load
+              fulltext = 'Happy ' + daystring + '!';
+            }
+            i = 0;
+            scan = setInterval(() => {
+              if(Math.random() <= 0.5) return;//stagger text
+              currentText = textbox.textContent;
+              if(i < fulltext.length){
+                currentText += fulltext[i];
+                textbox.textContent = currentText;
+                i++;
+              }
+              else {
+                clearInterval(scan);
+              }
+            }, 100);
+            insertion = document.getElementById('insertion');
+            on = false;
+            setInterval(() => {
+              on = !on;
+              if(on){
+                insertion.style.color = 'rgba(0,0,0,0)';
+              }
+              else{
+                insertion.style.color = 'rgba(0,0,0,1)';
+              }
+            }, 500);
+          </script>
+        </td>
+        <td>
+          <nav>
+            <a href="https://github.com/ZakareyaAlatoli">
+              <img src="https://img.icons8.com/ios-filled/344/github.png">
+            </a>
+            <a href="https://www.linkedin.com/in/zalatoli/">
+              <img src="https://img.icons8.com/ios-filled/344/linkedin-circled--v1.png">
+            </a>
+            <a href="mailto://zakareya.m.alatoli@gmail.com">
+              <img src="https://img.icons8.com/ios-filled/344/circled-envelope.png">
+            </a>
+          </nav>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td class="sidebar">
+          <h3 style="text-decoration: underline;">Articles</h3>
+          <a href="./precision_loss.html">Precision Loss</a>
+        </td>
+        <td style="width: 10px;"></td>
+        <td>
+          <article>
+            <h2 class="gradient-text-shadow" style="font-size: 3rem;">I am <i>Zakareya Alatoli</i>, a fullstack developer.</h2> 
+            <h3 class="gradient-text-shadow" style="font-size: 2rem;">
+              I write code for business and pleasure. Take a look at what I've done.
+            </h3>
+          </article>
+          <div>
+            <section class="project-container">
+              <div class="project">
+                <!--Multiplayer Browser Game-->
+                <a href="https://github.com/ZakareyaAlatoli/Got-Your-Card">
+                    <span>Got Your Card</span>
+                    <p>
+                      A text-based game where each player answers each other's random questions, and 
+                      you win by correctly identifying who said what.
+                    </p>
+                    <img src="https://img.icons8.com/fluency/344/node-js.png" title="Node.js"/>
+                    <img src="https://img.icons8.com/ios/344/javascript-logo.png" title="Javascript"/>
+                    <img src="https://img.icons8.com/ios/344/html-filetype--v1.png" title="HTML"/>
+                    <img src="https://img.icons8.com/dotty/344/css.png" title="CSS"/>
+                </a>
+              </div>
+              <div class="project">
+                <!--My Website-->
+                <a href="https://github.com/ZakareyaAlatoli/about">
+                    <span>My Personal Website</span>
+                    <p>
+                      Code for the very website you are looking at.
+                    </p>
+                    <img src="https://img.icons8.com/ios/344/javascript-logo.png" title="Javascript"/>
+                    <img src="https://img.icons8.com/ios/344/html-filetype--v1.png" title="HTML"/>
+                    <img src="https://img.icons8.com/dotty/344/css.png" title="CSS"/>
+                </a>
+              </div>
+            </section>
+          </div>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

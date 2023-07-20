@@ -2,6 +2,7 @@
     --bg-h: 60;
     --bg-s: 25%;
     --bg-l: 60%;
+    --margin: 10px;
 }
 
 .gradient-text-shadow{
@@ -24,24 +25,44 @@
     color: hsl(var(--bg-h), var(--bg-s), calc(var(--bg-l) - 35%));
 }
 
-body{
-    margin: 20px 100px;
+body {
+    margin: var(--margin);
     font-family: Arial, Helvetica, sans-serif, 'Arial Bold';
     font-weight: 600;
-    background: linear-gradient(90deg, hsl(var(--bg-h), var(--bg-s), 90%) 0%, hsl(var(--bg-h), var(--bg-s), var(--bg-l)) 100%);
+    background: linear-gradient(90deg, hsl(var(--bg-h), var(--bg-s), 95%) 0%, hsl(var(--bg-h), var(--bg-s), var(--bg-l)) 100%);
 }
 
-a{
+#scantext, #insertion {
+    font-size: 1.5em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
     text-decoration: none;
 }
 
-ul{
-    margin: 10px;
+.sidebar {
+    display: block;
+    padding: 5px;
+    width: 200px;
+    height: 100vh;
+    border-style: solid;
+    border-width: 0 5px 0 0;
+    border-radius: 5px;
+    border-color: hsl(var(--bg-h), var(--bg-s), 20%);
+}
+
+ul {
     list-style-type: none;
+}
+
+.projects-container {
+    grid-template-columns: 500px 500px;
+    margin: 10px;
     padding: 0;
 }
 
-li{
+.project {
     --op: 0.6;
     border-radius: 25px;
     border-style: outset;
@@ -53,48 +74,33 @@ li{
     text-align: center;
 }
 
-li:hover{
+.project:hover {
     --op: 1;
 }
 
-li img, nav img{
+.project img, nav img {
     width: 50px;
     height: 50px;
 }
 
-li p{
+.project p {
     font-family:'Courier New', Courier, monospace;
 }
 
-li span{
+.project span {
     font-size: x-large;
     font-weight: 100;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-nav img{
+nav img {
     transition: transform 0.1s;
 }
 
-nav a{
+nav a {
     margin-left: 3px;
 }
 
-nav img:hover{
+nav img:hover {
     transform: scale(120%, 120%);
-}
-
-.center-background{
-    position: absolute;
-    top: 50%;  
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    font-size: 8rem;
-    letter-spacing: -1.25rem;
-}
-
-#hours, #minutes, #seconds{
-    font-family: monospace, sans-serif;
-    letter-spacing: 0;
 }
