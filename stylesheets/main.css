@@ -1,7 +1,7 @@
 :root{
     --bg-h: 60;
     --bg-s: 25%;
-    --bg-l: 60%;
+    --bg-l: 40%;
     --margin: 10px;
 }
 
@@ -29,7 +29,7 @@ body {
     margin: var(--margin);
     font-family: Arial, Helvetica, sans-serif, 'Arial Bold';
     font-weight: 600;
-    background: linear-gradient(90deg, hsl(var(--bg-h), var(--bg-s), 95%) 0%, hsl(var(--bg-h), var(--bg-s), var(--bg-l)) 100%);
+    background: linear-gradient(90deg, hsl(var(--bg-h), var(--bg-s), 100%) 0%, hsl(var(--bg-h), var(--bg-s), var(--bg-l)) 100%);
 }
 
 #scantext, #insertion {
