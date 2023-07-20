@@ -11,11 +11,6 @@
       const root = document.querySelector(':root');
       const initialHue = Math.random() * 360;
       root.style.setProperty('--bg-h', initialHue);
-      onscroll = (e) => {
-        //This becomes more expensive with smooth scrolling. Might need to
-        //stagger it
-        root.style.setProperty('--bg-h', initialHue + (window.scrollY / 4));
-      }
     </script>
     <title>Zakareya Alatoli - Homepage</title>
   </head>
@@ -72,15 +67,11 @@
     <article>
       <h2 class="gradient-text-shadow" style="font-size: 3rem;">I am <i>Zakareya Alatoli</i>, a fullstack developer.</h2> 
       <h3 class="gradient-text-shadow" style="font-size: 2rem;">
-        I write code for business and pleasure. Web development is my specialty. 
-        I hope to work professionally as a software developer one day.
+        I write code for business and pleasure. Take a look at what I've done.
       </h3>
     </article>
     <div>
       <section>
-        <h1>
-          Things I've worked on
-        </h1>
         <ul>
           <!--Multiplayer Browser Game-->
           <a href="https://github.com/ZakareyaAlatoli/Got-Your-Card">
@@ -101,8 +92,7 @@
             <li>
               <span>My Personal Website</span>
               <p>
-                Code for the very website you are looking at. The entire project was done by me 
-                alone.
+                Code for the very website you are looking at.
               </p>
               <img src="https://img.icons8.com/ios/344/javascript-logo.png" title="Javascript"/>
               <img src="https://img.icons8.com/ios/344/html-filetype--v1.png" title="HTML"/>
@@ -111,41 +101,6 @@
           </a>
         </ul>
       </section>
-    </div>
-
-    <!--Background clock-->
-    <div class="center-background bg-color" style="position:fixed;">
-      <h1><span id="hours">HR</span>:<span id="minutes">MN</span>:<span id="seconds">SC</span></h1>
-      <script>
-        function getHours(date){
-          hours = date.getHours();
-          return hours > 12 ? hours - 12 : hours;
-        }
-        function getMinutes(date){
-          minutes = date.getMinutes();
-          return minutes < 10 ? '0' + minutes : minutes;
-        }
-        function getSeconds(date){
-          seconds = date.getSeconds();
-          return seconds < 10 ? '0' + seconds : seconds;
-        }
-        
-        dispHR = document.getElementById('hours');
-        dispMN = document.getElementById('minutes');
-        dispSC = document.getElementById('seconds');
-
-        today = new Date();
-        dispHR.textContent = getHours(today);
-        dispMN.textContent = getMinutes(today);
-        dispSC.textContent = getSeconds(today);
- 
-        window.setInterval(() => {
-          today = new Date();
-          dispHR.textContent = getHours(today);
-          dispMN.textContent = getMinutes(today);
-          dispSC.textContent = getSeconds(today);
-        }, 1000)
-      </script>
     </div>
   </body>
 </html>
