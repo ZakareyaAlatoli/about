@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.num {
+  font-size: 3rem;
+  font-family: monospace;
+}
+
+.sig td {
+  padding: 0.2rem;
+  margin: 0 -0.1rem;
+  background-color: pink;
+  border-radius: 0.5rem;
+}
+
+tr .normal {
+  background-color: white;
+}
+
+td sup {
+  background-color: lightblue;
+  border-radius: 0.25rem;
+}
+

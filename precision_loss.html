@@ -3,10 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Precision Loss</title>
+  <title>Floating Point Precision Loss</title>
+  <meta name="description" content="Explaining why visual bugs occur in computer graphics due to floating point precision loss">
+  <link href="./precision_loss.css" rel="stylesheet">
 </head>
 <body>
-  <img src="./images/precision_loss.png" width="700">
-  <img src="./images/precision_loss_close.png" width="500">
+  <article>
+    <h2>What The Heck Is Going On Here?</h2>
+    The other day I came across this YouTube video:<br>
+    <iframe width="420" height="345" src="https://www.youtube.com/watch?v=wGhBjMcY2YQ&lc=UgxSOvTZAoWGcFsB6aR4AaABAg.9sEPU19u4LL9sMxdX84SCg"></iframe>
+    <p>
+      If you've played video games long enough you might have noticed a similar effect, particularly if you are fond 
+      of "out-of-bounds" glitches or exploits where you somehow get beyond the edge of the game world and just keep going. In this 
+      article I will explain why this happens.
+    </p>
+    <h2>How Computers Store Numbers</h2>
+    <p>
+      In computers, mixed numbers are stored in <i>floating point format</i>. It's basically
+      <a href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation.</a>
+      In base 10 scientific notation, the number <b>1,234</b> would be written as <b>1.234 * 10<sup>3</sup></b>.
+      Computers store numbers in base 2, also called <i>binary</i>, but the principle of precision loss is the same
+      regardless of base. It will be easier to explain for most people reading this using base 10.
+    </p>
+    <p>
+      Computers only have a finite amount of space to store numbers. If you wanted to store a number in scientific 
+      notation, but you only had 6 digits for the <b style="color: red">significand</b> and 1 digit for the 
+      <b style="color:blue;">exponent</b>, then the highest number you could represent is 
+      <table class="num">
+        <tr class="sig">
+          <td>9</td>
+          <td class="normal">.</td>
+          <td>9</td>
+          <td>9</td>
+          <td>9</td>
+          <td>9</td>
+          <td>9</td>
+          <td class="normal">*10</td>
+          <td class="normal"><sup>9</sup></td>
+        </tr>
+      </table>
+      which is 9,999,990,000.
+    </p>
+    <p>
+      Conversely, the smallest positive number that can be represented is 
+      <table class="num">
+        <tr class="sig">
+          <td>1</td>
+          <td class="normal">.</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td class="normal">*10</td>
+          <td class="normal"><sup>-9</sup></td>
+        </tr>
+      </table>
+      You might think, that with the restriction of 6 digits for the significand and 1 digit for the exponent, 
+      that we can represent any number from 0.000000001 to 9,999,990,000, but you'd be wrong. Take for example,
+      the number 1234.567. In scientific notation this would be
+      <table class="num">
+        <tr class="sig">
+          <td>1</td>
+          <td class="normal">.</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td class="normal">7*10</td>
+          <td class="normal"><sup>3</sup></td>
+        </tr>
+      </table>
+    </p>
+    Here's the problem. We only have 6 digits to represent the significand, but we need 7 to properly represent our number.
+    How do we resolve this? Believe it or not, what a computer would do is just discard any extra digits at the end. So we end 
+    up throwing away the 7 and storing the number 1234.56 instead. <b>This is what floating point precision loss means.</b> Look, 
+    what happens when you start with the number 1.23456 and repeatedly multiply by 10 (in other words, increase the exponent by 1). 
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>0</sup>=1.23456</td>
+      </tr>
+    </table>
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>1</sup>=12.3456</td>
+      </tr>
+    </table>
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>2</sup>=123.456</td>
+      </tr>
+    </table>
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>3</sup>=1234.56</td>
+      </tr>
+    </table>
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>4</sup>=12345.6</td>
+      </tr>
+    </table>
+    <table class="num">
+      <tr class="sig">
+        <td>1</td>
+        <td class="normal">.</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="normal">*10</td>
+        <td class="normal"><sup>5</sup>=123456</td>
+      </tr>
+    </table>
+    <p>
+      Do you see it? Each time we multiply the initial number by 10 the decimal point <i>floats</i> to the right
+      one place and we lose a digit for representing the fractional part of the number. When the exponent reaches 5,
+      we have no digits left to represent fractions at all. What if we were running some program and needed to store 
+      some number in between 123,456 and 123,457? We couldn't do it, because that would require at least 7 digits in 
+      the significand! To make matters worse, consider increasing the exponent even further. 
+      <table class="num">
+        <tr class="sig">
+          <td>1</td>
+          <td class="normal">.</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td class="normal">*10</td>
+          <td class="normal"><sup>6</sup>=1234560</td>
+        </tr>
+      </table>
+      Now, the lack of precision means we are missing the ability to store entire whole numbers like 1,234,561 and  
+      1,234,562. 
+    </p>
+    <h2>A Common Consequence of Precision Loss</h2>
+    <p>
+      A common use for floating point numbers is to represent the positions of vertices in a shape. In real life, a circle
+      technically has infinite vertices, but in a computer shapes are made with a limited number of vertices, so a circle 
+      must have points. The impression of a circle is achieved by having enough vertices to make the edges look smooth. In 
+      the aforementioned video, the sphere is constantly moving away from the origin of the world, this means that the 
+      coordinates (although maybe not on every axis) representing the position of each vertex are increasing. As they increase,
+      they begin to suffer from the loss of precision I showed above.
+    </p>
+    <p>
+      Note that it's the loss of precision that causes these visual bugs and not merely that the values of the coordinates get 
+      too high. For instance, consider the following image. 
+      <img src="./images/precision_loss.png" width="700"><br>
+      There are 3 overlapping circles each with 24 vertices. The only difference between them is the amount of decimal places 
+      reserved to store the coordinates of each vertex. Notice how merely by reducing the precision of the coordinates, the 
+      circle becomes less circular. The amount of error between two levels of precision increases dramatically as you lose more 
+      and more decimal places. Consider how close the circle with 3 decimal places is to the circle with 2 decimal places and 
+      then compare that to the one with 1 decimal place. 
+      <img src="./images/precision_loss_close.png" width="500">
+    </p>
+  </article>
+
 </body>
 </html>
