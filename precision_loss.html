@@ -38,11 +38,9 @@
           <td>9</td>
           <td>9</td>
           <td>9</td>
-          <td class="normal">*10</td>
-          <td class="normal"><sup>9</sup></td>
+          <td class="normal">*10<sup>9</sup>=9,999,990,000</td>
         </tr>
       </table>
-      which is 9,999,990,000.
     </p>
     <p>
       Conversely, the smallest positive number that can be represented is 
@@ -55,13 +53,12 @@
           <td>0</td>
           <td>0</td>
           <td>0</td>
-          <td class="normal">*10</td>
-          <td class="normal"><sup>-9</sup></td>
+          <td class="normal">*10<sup>-9</sup>=0.000000001</td>
         </tr>
       </table>
       You might think, that with the restriction of 6 digits for the significand and 1 digit for the exponent, 
       that we can represent any number from 0.000000001 to 9,999,990,000, but you'd be wrong. Take for example,
-      the number 1234.567. In scientific notation this would be
+      the number 1,234.567. In scientific notation this would be
       <table class="num">
         <tr class="sig">
           <td>1</td>
@@ -78,7 +75,7 @@
     </p>
     Here's the problem. We only have 6 digits to represent the significand, but we need 7 to properly represent our number.
     How do we resolve this? Believe it or not, what a computer would do is just discard any extra digits at the end. So we end 
-    up throwing away the 7 and storing the number 1234.56 instead. <b>This is what floating point precision loss means.</b> Look, 
+    up throwing away the 7 and storing the number 1,234.56 instead. <b>This is what floating point precision loss means.</b> Look, 
     what happens when you start with the number 1.23456 and repeatedly multiply by 10 (in other words, increase the exponent by 1). 
     <table class="num">
       <tr class="sig">
@@ -155,7 +152,7 @@
         <td>5</td>
         <td>6</td>
         <td class="normal">*10</td>
-        <td class="normal"><sup>5</sup>=123456</td>
+        <td class="normal"><sup>5</sup>=123456.</td>
       </tr>
     </table>
     <p>
@@ -174,7 +171,7 @@
           <td>5</td>
           <td>6</td>
           <td class="normal">*10</td>
-          <td class="normal"><sup>6</sup>=1234560</td>
+          <td class="normal"><sup>6</sup>=1,234,560</td>
         </tr>
       </table>
       Now, the lack of precision means we are missing the ability to store entire whole numbers like 1,234,561 and  
@@ -197,7 +194,7 @@
       reserved to store the coordinates of each vertex. Notice how merely by reducing the precision of the coordinates, the 
       circle becomes less circular. The amount of error between two levels of precision increases dramatically as you lose more 
       and more decimal places. Consider how close the circle with 3 decimal places is to the circle with 2 decimal places and 
-      then compare that to the one with 1 decimal place. 
+      then compare that to the one with 1 decimal place.<br> 
       <img src="./images/precision_loss_close.png" width="500">
     </p>
   </article>
